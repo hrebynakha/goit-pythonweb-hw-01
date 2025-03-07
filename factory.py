@@ -38,11 +38,11 @@ class VehicleFactory(ABC):
 
     @abstractmethod
     def create_car(self, make: str, model: str) -> Car:
-        """Abstratc method for car"""
+        """Abstract method for car"""
 
     @abstractmethod
     def create_motorcycle(self, make: str, model: str) -> Motorcycle:
-        """Abstratc method for motorcycle"""
+        """Abstract method for motorcycle"""
 
 
 class USVehicleFactory(VehicleFactory):
