@@ -89,13 +89,13 @@ class EUVehicleFactory(VehicleFactory):
         return Motorcycle(make, model, self.spec_region)
 
 
-# Використання
-us_factory = USVehicleFactory()
-eu_factory = EUVehicleFactory()
+if __name__ == "__main__":
+    us_factory = USVehicleFactory()
+    eu_factory = EUVehicleFactory()
 
-vehicle1 = us_factory.create_car("Toyota", "Corolla")
+    vehicle1 = us_factory.create_car("Toyota", "Corolla")
 
-vehicle1.start_engine()
+    vehicle1.start_engine()
 
-vehicle2 = eu_factory.create_motorcycle("Harley-Davidson", "Sportster")
-vehicle2.start_engine()
+    vehicle2 = eu_factory.create_motorcycle("Harley-Davidson", "Sportster")
+    vehicle2.start_engine()
