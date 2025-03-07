@@ -11,7 +11,7 @@ logging.basicConfig(
 
 
 class Vehicle:
-    """Base ehicle class"""
+    """Base vehicle class"""
 
     def __init__(self, make: str, model: str, spec_region: str):
         self.make = make
@@ -26,23 +26,11 @@ class Vehicle:
 
 
 class Car(Vehicle):
-    """Car base class"""
-
-    def __init__(self, make: str, model: str, spec_region: str):
-        self.make = make
-        self.model = model
-        self.spec_region = spec_region
-        super().__init__(make, model, spec_region)
+    """Car class"""
 
 
 class Motorcycle(Vehicle):
-    """Motorcycle base class"""
-
-    def __init__(self, make: str, model: str, spec_region: str):
-        self.make = make
-        self.model = model
-        self.spec_region = spec_region
-        super().__init__(make, model, spec_region)
+    """Motorcycle class"""
 
 
 class VehicleFactory(ABC):
@@ -50,21 +38,20 @@ class VehicleFactory(ABC):
 
     @abstractmethod
     def create_car(self, make: str, model: str) -> Car:
-        """Abstartc method for car"""
+        """Abstratc method for car"""
 
     @abstractmethod
     def create_motorcycle(self, make: str, model: str) -> Motorcycle:
-        """Abstartc method for motorcycle"""
+        """Abstratc method for motorcycle"""
 
 
 class USVehicleFactory(VehicleFactory):
-    """USVehicleFactory"""
+    """US factory"""
 
     def __init__(
         self,
     ):
         self.spec_region = "US"
-        super().__init__()
 
     def create_car(self, make: str, model: str) -> Car:
         return Car(make, model, self.spec_region)
@@ -74,13 +61,12 @@ class USVehicleFactory(VehicleFactory):
 
 
 class EUVehicleFactory(VehicleFactory):
-    """EUVehicleFactory"""
+    """EU factory"""
 
     def __init__(
         self,
     ):
         self.spec_region = "EU"
-        super().__init__()
 
     def create_car(self, make: str, model: str) -> Car:
         return Car(make, model, self.spec_region)
